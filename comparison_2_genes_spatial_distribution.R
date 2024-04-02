@@ -38,8 +38,8 @@ conte_per_quadrante = function(d, num_quad, gene_x){
   cc = NULL
   
   for (i in num_quad){
-    data_now = d[gene_x, d$quadrante == i]
-    cc[i] = sum(data_now@assays$Spatial@counts)
+    data_now = d@assays$Spatial$counts[gene_x, d$quadrante == i]
+    cc[i] = sum(data_now)
     names(cc)[i] = paste0("quadrante", i)
   }
   
